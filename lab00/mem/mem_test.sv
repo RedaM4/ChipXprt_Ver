@@ -7,14 +7,18 @@ module mem_test ( input logic clk,
                   output logic [7:0] data_in,     // data TO memory
                   input  wire [7:0] data_out     // data FROM memory
                 );
+
+
+           
 // SYSTEMVERILOG: timeunit and timeprecision specification
 timeunit 1ns;
 timeprecision 1ns;
 
 // SYSTEMVERILOG: new data types - bit ,logic
-bit         debug = 1;
+bit      debug = 0;
 logic [7:0] rdata;      // stores data read from memory for checking
-
+int check [32];  
+int error_status;
 // Monitor Results
   initial begin
       $timeformat ( -9, 0, " ns", 9 );
@@ -31,18 +35,17 @@ logic [7:0] rdata;      // stores data read from memory for checking
 
 initial
   begin: memtest
-  int error_status;
 
     $display("Clear Memory Test");
 
     for (int i = 0; i< 32; i++)
        // Write zero data to every address location
-      write_mem(i,0,0) ;
+      write_mem(i,0,debug) ;
 
     for (int i = 0; i<32; i++)
       begin 
        // Read every address location
-          read_mem(i,1);
+          read_mem(i,debug);
        // check each memory location for data = 'h00
 
       end
@@ -51,11 +54,11 @@ initial
     $display("Data = Address Test");
 
     for (int i = 0; i< 32; i++)
-       write_mem (i,i,0) ; 
+       write_mem (i,i,debug) ; 
     for (int i = 0; i<32; i++)
       begin
        // Read every address location
-                read_mem(i,1);
+                read_mem(i,debug);
        // check each memory location for data = address
           if( i != data_out ) begin
               $display("something Wrong at %d data = %d", i,data_out); 
@@ -70,7 +73,7 @@ $display("Data = RONDOM");
 
 
     for (int i = 0; i< 32; i++)
-       random_meme(i,1) ; 
+       random_meme(i,debug) ; 
 
 
 
@@ -102,7 +105,7 @@ task write_mem(
   if(debug)$display("write Data at addr %d: %d", addr, data_in);
   write = 0;
 
-
+check [iaddr] = data_in ; 
 
 endtask
 
@@ -121,8 +124,16 @@ task read_mem (
   @(negedge clk);
     read = 0;
 
-  if(debug)
+  if(debug)begin
   $display("Read Data at addr %d: %d", addr, data_out);
+
+if (check [iaddr] != data_out )begin
+  $display("Error: dismatch data") ; 
+  error_status++ ; 
+  end
+else $display("Mathcy matchy");
+      end
+
   //data_out = odata;
 endtask
 
@@ -133,7 +144,7 @@ endtask
 function void printstatus(input int status ); 
 if(status>0)
     $display("the test FAILED =%d",status);
-  else     $display("it works alhumdu le allah" );
+  else     $display("it works alhumdu allah" );
 
 endfunction 
 
@@ -143,6 +154,7 @@ task random_meme(
 );
  int rando ;
 rando = $urandom_range(0, 31);
+
 write_mem(iaddr,rando, debug);
 read_mem(iaddr,debug);
 
