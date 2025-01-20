@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1737352989.450208683, "rt":0.13, "ut":0.04, "st":0.06}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1737352989.206756810}
+{"VCS_COMP_START_TIME": 1737352989.206756810}
+{"VCS_COMP_END_TIME": 1737352989.623107555}
+{"VCS_USER_OPTIONS": "-sverilog memory.sv mem_test.sv top.sv -o sim_mem"}
