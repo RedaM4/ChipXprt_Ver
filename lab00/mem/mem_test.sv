@@ -36,6 +36,9 @@ int error_status;
 initial
   begin: memtest
 
+
+
+
     $display("Clear Memory Test");
 
     for (int i = 0; i< 32; i++)
