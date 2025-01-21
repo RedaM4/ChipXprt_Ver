@@ -11,7 +11,7 @@ timeunit 1ns;
 timeprecision 1ns;
 
 // SYSTEMVERILOG: new data types - bit ,logic
-bit      debug = 1;
+bit      debug = 0;
 logic [7:0] rdata;      // stores data read from memory for checking
 int check [32];  
 int error_status;

@@ -139,7 +139,7 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 0
 4
 1737449550 top.sv
-1737450168 mem_test.sv
+1737457890 mem_test.sv
 1737448916 memory.sv
 1737449840 mem_intf.sv
 4
@@ -147,5 +147,5 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 1733285572 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/liberrorinf.so
 1733285568 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/libsnpsmalloc.so
 1733285558 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/libvfs.so
-1737450172 sim_mem.daidir
+1737457956 sim_mem.daidir
 -1 partitionlib
