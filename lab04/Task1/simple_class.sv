@@ -14,7 +14,7 @@ class counter;
 
     endfunction
 
-    function int getcount();
+    function int getcounter();
         return counter;
     endfunction
 
@@ -38,43 +38,71 @@ endclass
 
 //--------down counter
 class down_counter extends counter;
-       function new(int num=0,int in1,int in2);
+bit borrow ; 
+static int count ; 
+
+       function new(int num=0,int in1,int in2,bit borrow = 0);
         super.new(num,in1,in2);
         super.check_limit(in1,in2) ; 
+        this.borrow = borrow ; 
+        count++ ; 
+    
     endfunction
 
     function void next();
          if(counter == min)begin
             counter = max ; 
+            borrow=1 ; 
         end
         else begin
            counter--; 
+           borrow =0 ; 
         end
         
 
 
-        $display("down counter: %d", counter);
+        //$display("down counter: %d", counter);
     endfunction
     
     //count
+function int getcount();
+    return count ; 
+    endfunction
+
 
 endclass
 
 
 //---------------upcounter
 class up_counter extends counter;
-      function new(int num=0,int in1,int in2);
+       bit carry ; 
+       static int count ; 
+      function new(int num=0,int in1,int in2,bit carry = 0);
         super.new(num,in1,in2);
-        super.check_limit(in1,in2) ; 
+        super.check_limit(in1,in2) ;
+        this.carry = carry ;  
+        count++ ; 
     endfunction
 
     function void next();
         if(counter == max)begin
             counter = min ; 
+            carry=1 ; 
         end
         else begin
+            carry=0 ; 
         counter++; end
        
-        $display("up counter: %d", counter);
+       // $display("up counter: %d", counter);
     endfunction
+
+
+function int getcount();
+    return count ; 
+    
+endfunction
+
+
 endclass
+
+
