@@ -72,7 +72,7 @@ function int getcount();
 
 endclass
 
-
+//hi
 //---------------upcounter
 class up_counter extends counter;
        bit carry ; 
