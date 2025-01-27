@@ -1,6 +1,6 @@
 psSimBaseName                      	sim_mem
 psLogFileName                      	NULL
-psDaiDir                           	/home/Reda_Alhashem/chip_ver/lab05/sim_mem.daidir
+psDaiDir                           	/home/Reda_Alhashem/chip_ver/lab05/Task1/sim_mem.daidir
 destPath                           	csrc/
 fSharedMasterElab                  	0
 fHsimPCSharedLibSpecified          	0

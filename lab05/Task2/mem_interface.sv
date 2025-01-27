@@ -29,7 +29,7 @@ interface mem_interf(input logic clk);
     @(negedge clk);
     write <= 0;
     if (debug == 1)
-      $display("Write - Address:%d  Data:%h", waddr, wdata);
+      $display("Write - Address:%d  Data:%c", waddr, wdata);
   endtask
   
   // SV task to read data byte from memory using address raddr and store it in rdata
@@ -42,7 +42,7 @@ interface mem_interf(input logic clk);
      read <= 0;
      rdata = data_out;
      if (debug == 1) 
-       $display("Read  - Address:%d  Data:%h", raddr, rdata);
+       $display("Read  - Address:%d  Data:%c", raddr, rdata);
   endtask
   
 endinterface

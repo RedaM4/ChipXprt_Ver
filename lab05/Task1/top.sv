@@ -1,4 +1,4 @@
-`include "mem_test.sv"
+//`include "mem_test.sv"
 module top;
 // SYSTEMVERILOG: timeunit and timeprecision specification
 timeunit 1ns;

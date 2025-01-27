@@ -11,7 +11,8 @@ timeprecision 1ns;
 bit         debug = 1;
 logic [7:0] rdata;      // stores data read from memory for checking
 int error_status = 0;
-   byte random_val = 8'h00 ; 
+//byte random_val = 8'h00 ; 
+transaction random_val ; 
 
 // Monitor Results
   initial begin
@@ -58,22 +59,18 @@ initial
     $display("===========================================================");
     $display("                    Data = random_val Test");
     $display("===========================================================\n");   
-    // Complete this test
    error_status = 0; 
-   //byte random_val = 8'h00 ; 
+    random_val = new() ; 
      for (int i = 0; i< 32; i++)begin
-    if (randomize(random_val) with {
-    random_val dist {
-        [8'h41 : 8'h5A] := 80,
-        [8'h61 : 8'h7A] := 20
-    }
-})
- begin 
+      // random_val.control_knob = 2;
+      random_val.control_knob = transaction::lower ; 
+      random_val.randomize();
+    if (random_val.data ) begin 
               
-        mif.write_mem (i, random_val, debug);
-        $display("address %d: %c",i,random_val);
-        mif.read_mem (i, rdata, debug);
-        checkit (i, rdata, random_val);
+        mif.write_mem (random_val.address, random_val.data, debug);
+        $display("address %d: %c",i,random_val.data);
+        mif.read_mem (random_val.address, rdata, debug);
+        checkit (random_val.address, rdata, random_val.data);
 
       end else begin
         $display("FAILED: address %d ",i);

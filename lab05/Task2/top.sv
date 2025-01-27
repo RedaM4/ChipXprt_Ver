@@ -8,10 +8,9 @@ timeprecision 1ns;
   // clock generator starts 
   bit clk = 0;
   always #5 clk = ~clk;
-  // clock generator ends
-  
-  mem_interf mif(clk);  // SystemVerilog interface instance
-  
+  // clock generator endsjj
+  //hi
+  mem_interf mif(clk);  
   
   mem_test test (.mif);  // memory test
 

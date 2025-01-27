@@ -1,5 +1,5 @@
 
-`include "mem_interface.sv"
+//`include "mem_interface.sv"
 module mem (mem_interf.mem mif);
 // SYSTEMVERILOG: timeunit and timeprecision specification
 timeunit 1ns;
