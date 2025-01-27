@@ -68,12 +68,12 @@ initial
     if (random_val.data ) begin 
               
         mif.write_mem (random_val.address, random_val.data, debug);
-        $display("address %d: %c",i,random_val.data);
+        $display("address %d: %c",random_val.address,random_val.data);
         mif.read_mem (random_val.address, rdata, debug);
         checkit (random_val.address, rdata, random_val.data);
 
       end else begin
-        $display("FAILED: address %d ",i);
+        $display("FAILED: address %d ",random_val.address);
       error_status++ ; 
       end
       
