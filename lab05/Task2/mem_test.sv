@@ -64,13 +64,13 @@ initial
      for (int i = 0; i< 32; i++)begin
       // random_val.control_knob = 2;
       random_val.control_knob = transaction::lower ; 
-      random_val.randomize();
+      random_val.randomize(); //--------- class =  trans test  calling = generator 
     if (random_val.data ) begin 
               
-        mif.write_mem (random_val.address, random_val.data, debug);
+        mif.write_mem (random_val.address, random_val.data, debug); // -----driver -> DUT
         $display("address %d: %c",random_val.address,random_val.data);
-        mif.read_mem (random_val.address, rdata, debug);
-        checkit (random_val.address, rdata, random_val.data);
+        mif.read_mem (random_val.address, rdata, debug);//------ DUT -> compare
+        checkit (random_val.address, rdata, random_val.data); // expected = random val.address  + actuall = rdata
 
       end else begin
         $display("FAILED: address %d ",random_val.address);
