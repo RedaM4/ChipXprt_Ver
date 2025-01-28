@@ -65,17 +65,26 @@ initial
     mbox = new();
     //  for (int i = 0; i< 32; i++)
       // random_val.control_knob = 2;
-      repeat (5)begin
-        random_val = new() ; 
-        random_val.control_knob = transaction::lower ; 
-        random_val.randomize();
+      // repeat (5)begin
+      //   random_val = new() ; 
+      //   random_val.control_knob = transaction::lower ; 
+      //   random_val.randomize();
 
-        $display("Generated transaction: address = %d, data = %c", random_val.address, random_val.data); 
-        mbox.put(random_val);
-      end
+      //   $display("Generated transaction: address = %d, data = %c", random_val.address, random_val.data); 
+      //   mbox.put(random_val);
+      // end
+
+fork
+    generate_transaction();
+    generate_transaction();
+    generate_transaction();
+    generate_transaction();
+    generate_transaction();
+join
+
       //---------------Driver
-      
-      repeat (5)begin
+      while(mbox.num() > 0 )begin
+      //repeat (5)begin
          raid = new(); 
         mbox.get(raid) ; 
 
@@ -103,6 +112,20 @@ initial
   printstatus(error_status);
     $finish;
   end
+
+
+
+
+
+task generate_transaction();
+     random_val = new();
+    random_val.control_knob = transaction::lower;
+    random_val.randomize();
+    $display("Generated transaction: address = %d, data = %c", random_val.address, random_val.data);
+    mbox.put(random_val);
+endtask
+
+
 
 function void checkit (input [4:0] address,
                       input [7:0] actual, expected);

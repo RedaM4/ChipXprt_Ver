@@ -1,6 +1,6 @@
 psSimBaseName                      	sim
 psLogFileName                      	NULL
-psDaiDir                           	/home/Reda_Alhashem/chip_ver/lab05/testing/sim.daidir
+psDaiDir                           	/home/Reda_Alhashem/chip_ver/lab05/mbox/sim.daidir
 destPath                           	csrc/
 fSharedMasterElab                  	0
 fHsimPCSharedLibSpecified          	0
