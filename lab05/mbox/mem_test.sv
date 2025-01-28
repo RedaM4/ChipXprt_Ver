@@ -12,7 +12,7 @@ bit         debug = 1;
 logic [7:0] rdata;      // stores data read from memory for checking
 int error_status = 0;
 //byte random_val = 8'h00 ; 
-transaction random_val ; 
+transaction random_val, trans; 
 transaction raid; 
 mailbox mbox;
 // Monitor Results
@@ -73,21 +73,21 @@ initial
       //   $display("Generated transaction: address = %d, data = %c", random_val.address, random_val.data); 
       //   mbox.put(random_val);
       // end
+  //random_val = new();
 
-fork
-    generate_transaction();
-    generate_transaction();
-    generate_transaction();
-    generate_transaction();
-    generate_transaction();
-join
+random_val = new();
+repeat (5)begin
+  generate_transaction();
+end
+    
+ raid = new(); 
 
       //---------------Driver
       while(mbox.num() > 0 )begin
       //repeat (5)begin
-         raid = new(); 
+        
         mbox.get(raid) ; 
-
+        //$display("mbox num = %d",mbox.num());
       if (raid.data ) begin   
         mif.write_mem (raid.address, raid.data, debug); // -----driver -> DUT
         $display("address %d: %c",raid.address,raid.data);
@@ -118,11 +118,16 @@ join
 
 
 task generate_transaction();
-     random_val = new();
+    // random_val = new();
+    // transaction::add_address(random_val.address);
     random_val.control_knob = transaction::lower;
     random_val.randomize();
+    trans = new();
+    trans.data = random_val.data;
+    trans.address = random_val.address ; 
     $display("Generated transaction: address = %d, data = %c", random_val.address, random_val.data);
-    mbox.put(random_val);
+    mbox.put(trans);
+
 endtask
 
 

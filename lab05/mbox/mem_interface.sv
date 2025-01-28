@@ -42,7 +42,7 @@ interface mem_interf(input logic clk);
      read <= 0;
      rdata = data_out;
      if (debug == 1) 
-       $display("Read  - Address:%d  Data:%d", raddr, rdata);
+       $display("Read  - Address:%d  Data:%c", raddr, rdata);
   endtask
   
 endinterface

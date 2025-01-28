@@ -23,7 +23,6 @@ function new(bit [4:0] addr = 8'h00, logic [7:0] rdata = 8'h00, control_knob_t k
 
 
 
-
     constraint printable_ascii {
         if(control_knob==ascii)
         data inside {[8'h20 : 8'h7F]};
