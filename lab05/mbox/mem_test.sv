@@ -63,49 +63,28 @@ initial
    error_status = 0; 
     //--------------------generator
     mbox = new();
-    //  for (int i = 0; i< 32; i++)
-      // random_val.control_knob = 2;
-      // repeat (5)begin
-      //   random_val = new() ; 
-      //   random_val.control_knob = transaction::lower ; 
-      //   random_val.randomize();
-
-      //   $display("Generated transaction: address = %d, data = %c", random_val.address, random_val.data); 
-      //   mbox.put(random_val);
-      // end
-  //random_val = new();
-
 random_val = new();
 repeat (5)begin
   generate_transaction();
 end
     
- raid = new(); 
+    fork
+    generate_transaction();
+    generate_transaction();
+    generate_transaction();
+    generate_transaction();
+    generate_transaction();
+   join
+
+
+ 
 
       //---------------Driver
-      while(mbox.num() > 0 )begin
-      //repeat (5)begin
-        
-        mbox.get(raid) ; 
-        //$display("mbox num = %d",mbox.num());
-      if (raid.data ) begin   
-        mif.write_mem (raid.address, raid.data, debug); // -----driver -> DUT
-        $display("address %d: %c",raid.address,raid.data);
-        
-        mif.read_mem (raid.address, rdata, debug);//------ DUT -> compare
-        
-        checkit (raid.address, rdata, raid.data); // expected = random val.address  + actuall = rdata
-
-      end else begin
-        $display("FAILED: address %d ",raid.address);
-      error_status++ ; 
-      end
-
-      end
+    driver(mbox) ;
       
    
       
-      //$display("Test completed. Total errors: %d", error_status);
+      
 
 
      
@@ -125,10 +104,38 @@ task generate_transaction();
     trans = new();
     trans.data = random_val.data;
     trans.address = random_val.address ; 
+    //trans = random_v  
     $display("Generated transaction: address = %d, data = %c", random_val.address, random_val.data);
     mbox.put(trans);
 
 endtask
+
+
+task driver (mailbox mbx );
+   raid = new(); 
+   while(mbox.num() > 0 )begin
+      //repeat (5)begin
+        
+        mbox.get(raid) ; 
+        //$display("mbox num = %d",mbox.num());
+      if (raid.data ) begin   
+        mif.write_mem (raid.address, raid.data, debug); // -----driver -> DUT
+        $display("address %d: %c",raid.address,raid.data);
+        
+        mif.read_mem (raid.address, rdata, debug);//------ DUT -> compare
+        
+        checkit (raid.address, rdata, raid.data); // expected = random val.address  + actuall = rdata
+
+      end else begin
+        $display("FAILED: address %d ",raid.address);
+      error_status++ ; 
+      end
+
+      end
+      
+endtask //driver
+
+
 
 
 
