@@ -36,14 +36,14 @@ class Environment;
     // Task to start all testbench components
     task run();
         fork
-            gen.run(); // Generator runs separately
-        join_none; // Allow other components to keep running after Generator completes
-
-        fork
+            gen.run(); 
+        
             drv.run();
             mon.run();
-            scb.run();
-        join
+            scb.run(); 
+            join
+           
+        
     endtask
 endclass
 

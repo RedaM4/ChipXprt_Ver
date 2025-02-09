@@ -2809,9 +2809,6 @@ extern "C" {
 void  rmaPropagate0_sim_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate1_sim_daidir (UB  * pcode, scalar  val);
 void  rmaPropagate2_sim_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate3_p_sim_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate3_sim_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate3_wn_sim_daidir (UB  * pcode, scalar  val);
 void  schedNewEvent (struct dummyq_struct * I1462, EBLK  * I1457, U  I622);
 #ifdef __cplusplus
 }

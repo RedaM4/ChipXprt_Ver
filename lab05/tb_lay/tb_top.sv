@@ -6,7 +6,8 @@
 `include "scoreboard.sv"
 `include "environment.sv"
 `include "dut.sv"
-
+ Environment env; // Environment instance
+ 
 module tb;
    timeunit 1ns;
 timeprecision 1ns;
@@ -16,7 +17,7 @@ timeprecision 1ns;
   always #5 clk = ~clk;
    
     mem_interf vif(clk); // Declare the interface
-    Environment env; // Environment instance
+   
 
     // Explicitly connect the interface to the DUT
     dut dut_inst(.mif(vif));
@@ -27,7 +28,13 @@ timeprecision 1ns;
         
         env = new(vif);
         env.run();
-        #1000; // Allow time for transactions
+        $display("FINISH COMPLETED ");
+            
+    end
+     initial begin
+        
+    
+        #500; // Allow time for transactions
         $finish;
     end
 endmodule

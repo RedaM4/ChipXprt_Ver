@@ -6,6 +6,7 @@ class Driver;
     mailbox gen2drv;         // Mailbox to receive transactions
     virtual mem_interf vif;      // Interface to interact with DUT
   transaction t;
+  logic [7:0]temp ; 
     // Constructor
     function new(mailbox g2d, virtual mem_interf vi);
         this.gen2drv = g2d;
@@ -16,15 +17,23 @@ class Driver;
     task run();
       
         forever begin
+           if(gen2drv.num() >0)begin
             gen2drv.get(t); // Blocking call to get a transaction
+           $display("hi - 1");
+            //if(vif.write) begin   
+            vif.write_mem(t.address, t.data);
+            $display("[Driver] Write: Address = %0d, Data = %0c", t.address, t.data);
+          vif.read_mem(t.address ,temp) ; 
+            $display("[Driver] Read: Address = %0d, Data = %0c", t.address, t.data);
 
-            vif.addr <= t.address;
-            vif.data_in <= t.data;
-            vif.write <= 1;
+           end
             #10;
-            vif.write <= 0;
-
-            $display("[DRIVER] Writing Address = %0d, Data = %0c", t.address, t.data);
+                             
+            
+           
+           // end
         end
     endtask
+
+
 endclass
