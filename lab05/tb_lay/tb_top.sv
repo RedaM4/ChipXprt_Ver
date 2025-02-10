@@ -29,11 +29,9 @@ timeprecision 1ns;
         env = new(vif);
         env.run();
         $display("FINISH COMPLETED ");
-            
+
     end
-     initial begin
-        
-    
+     initial begin    
         #500; // Allow time for transactions
         $finish;
     end

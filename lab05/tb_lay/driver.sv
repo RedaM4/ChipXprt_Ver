@@ -19,7 +19,7 @@ class Driver;
         forever begin
            if(gen2drv.num() >0)begin
             gen2drv.get(t); // Blocking call to get a transaction
-           $display("hi - 1");
+           //$display("hi - 1");
             //if(vif.write) begin   
             vif.write_mem(t.address, t.data);
             $display("[Driver] Write: Address = %0d, Data = %0c", t.address, t.data);
