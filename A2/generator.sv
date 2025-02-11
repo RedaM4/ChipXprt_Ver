@@ -16,16 +16,21 @@ task run(bit debug =1);
       $display("reset:");
       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::rest;
         generate_transactions(1, debug);
-      
+       
+
+
       $display("\nwrite random values");
        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_rand;
         generate_transactions(rep, debug);
-        // $display("\nwrite zero:");
-        // t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_zero;
-        // generate_transactions(rep, debug);
+
+     $display("\nfull and empty signals:");
+        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::fe;
+        generate_transactions(1, debug);
+
+       
         $display("\nread:");
         t.control_knob = transaction#(DEPTH, DATA_WIDTH)::read;
-        generate_transactions(6, debug);
+        generate_transactions(rep, debug);
 endtask //run
 
 

@@ -19,7 +19,7 @@ class Environment#(parameter DEPTH=8, DATA_WIDTH=8);
         gen2drv = new(); // Generator -> Driver
         gen2scb = new(); // Generator -> Scoreboard
         mon2scb = new(); // Monitor -> Scoreboard
-         rep=5; 
+         rep=8; 
         gen = new(gen2drv, gen2scb,rep);
         drv = new(gen2drv, vif);
         mon = new(mon2scb, vif);

@@ -3,7 +3,8 @@ class transaction#(parameter DATA_WIDTH = 8, DEPTH=8 );
         wr_zero, // Constraint a: Printable ASCII characters
        wr_rand,
        read,
-       rest
+       rest,
+       fe
     } control_knob_t;
     
     
@@ -69,5 +70,17 @@ constraint reset{
         rd_en == 0;             //  Read disabled
     }
 }
+
+
+constraint read_signals{
+    if (control_knob == fe) { //  Ensure correct enum reference
+        data_in inside {0};        //  Ensure data is 0
+        rst_n == 1;             //  Active low reset
+        wr_en == 0;             //  Write enable set
+        rd_en == 0;             //  Read disabled
+    }
+}
+
+
 
 endclass //transaction

@@ -27,12 +27,22 @@ class Monitor#(parameter DEPTH=8, DATA_WIDTH=8);
                 mon2scb.put(t);
 
                 if (debug) begin
-              $display("[MONITOR] Captured Transaction: Data = %0c (0x%0h), Full = %0b, Empty = %0b", 
+              $display("[MONITOR] 🧐 Captured Transaction: Data = %0c (0x%0h), Full = %0b, Empty = %0b", 
               t.data_out, t.data_out, t.full, t.empty);
                 end
             
                    
            end
+
+           if (debug) begin
+          if (vif.wr_en ==0 && vif.rd_en ==0 && vif.rst_n==1) begin
+            $display("[MONITOR]📌FE Captured Transaction: , Full = %0b, Empty = %0b", 
+             vif.full, vif.empty);
+
+        end
+                end
+
+
 
       end
 
