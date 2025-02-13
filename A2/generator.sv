@@ -1,36 +1,25 @@
    timeunit 1ns;
 timeprecision 1ns;
 class Generator #(parameter DEPTH=8, DATA_WIDTH=8);
-    mailbox gen2drv, gen2scb;
-    transaction #(DEPTH, DATA_WIDTH) t,temp;
-    int rep ; 
-    function new(mailbox g2d, mailbox g2s,int num =5);
+    mailbox gen2drv;
+    transaction #(DEPTH, DATA_WIDTH) t;
+    
+    function new(mailbox g2d);
         this.gen2drv = g2d;
-        this.gen2scb = g2s;
-        this.rep = num ; 
+       // this.gen2scb = g2s;
+       
     endfunction
 
 task run(bit debug =1);
-    
-     t = new();
-      $display("reset:");
-      t.control_knob = transaction#(DEPTH, DATA_WIDTH)::rest;
-        generate_transactions(1, debug);
-       
-
-
-      $display("\nwrite random values");
-       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_rand;
-        generate_transactions(rep, debug);
-
-     $display("\nfull and empty signals:");
-        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::fe;
-        generate_transactions(1, debug);
-
-       
-        $display("\nread:");
-        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::read;
-        generate_transactions(rep, debug);
+     scen1() ; 
+    // $display("🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 ");
+    scen2() ; 
+    // $display("🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 ");
+    //  scen3() ; 
+    //  $display("🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 ");
+    //  scen4() ; 
+    //  $display("🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 ");
+    //  scen5() ; 
 endtask //run
 
 
@@ -44,14 +33,12 @@ task send_transaction(transaction t);
     temp.data_in  = t.data_in;
 
     // ✅ Send to mailboxes
-     if (temp.wr_en) begin
-        gen2scb.put(temp);
-     end
+    //  if (temp.wr_en ==1 ) begin
+    //     gen2scb.put(temp);
+    //  end
      
         gen2drv.put(temp);
-     
-    
-    
+
 endtask
 
 
@@ -68,5 +55,126 @@ task generate_transactions(int rep, bit debug);
 endtask
 
 
+task scen1(bit debug =1) ;
+    t = new();
+
+      $display("\nreset:");
+      t.control_knob = transaction#(DEPTH, DATA_WIDTH)::rest;
+        generate_transactions(1, debug);
+
+      $display("\nwrite random values");
+       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_rand;
+        generate_transactions(2, debug);
+
+    //  $display("\nfull and empty signals:");
+    //     t.control_knob = transaction#(DEPTH, DATA_WIDTH)::fe;
+    //     generate_transactions(1, debug);
+
+       
+        $display("\nread:");
+        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::read;
+        generate_transactions(2, debug);
+endtask
+
+
+task scen2(bit debug =1) ;
+    t = new();
+    
+      $display("reset:");
+      t.control_knob = transaction#(DEPTH, DATA_WIDTH)::rest;
+        generate_transactions(1, debug);
+
+      $display("\nwrite random values");
+       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_rand;
+        generate_transactions(5, debug);
+
+    //  $display("\nfull and empty signals:");
+    //     t.control_knob = transaction#(DEPTH, DATA_WIDTH)::fe;
+    //     generate_transactions(1, debug);
+
+    
+        $display("\nread:");
+        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::read;
+        generate_transactions(4, debug);
+
+endtask
+
+task scen3(bit debug =1) ;
+    t = new();
+    
+      $display("reset:");
+      t.control_knob = transaction#(DEPTH, DATA_WIDTH)::rest;
+        generate_transactions(1, debug);
+
+      $display("\nwrite random values");
+       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_rand;
+        generate_transactions(1, debug);
+
+     $display("\nfull and empty signals:");
+        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::fe;
+        generate_transactions(1, debug);
+
+    
+        $display("\nread:");
+        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::read;
+        generate_transactions(2, debug);
+
+endtask
+
+task scen4(bit debug =1) ;
+    t = new();
+    
+      $display("reset:");
+      t.control_knob = transaction#(DEPTH, DATA_WIDTH)::rest;
+        generate_transactions(1, debug);
+
+      $display("\nwrite random values");
+       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_rand;
+        generate_transactions(8, debug);
+
+     $display("\nfull and empty signals:");
+        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::fe;
+        generate_transactions(1, debug);
+
+    
+        $display("\nread:");
+        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::read;
+        generate_transactions(9, debug);
+
+endtask
+
+task scen5(bit debug =1) ;
+    t = new();
+    
+      $display("reset:");
+      t.control_knob = transaction#(DEPTH, DATA_WIDTH)::rest;
+        generate_transactions(1, debug);
+
+      $display("\nwrite random values");
+       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_rand;
+        generate_transactions(5, debug);
+
+     $display("\nfull and empty signals:");
+        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::fe;
+        generate_transactions(1, debug);
+
+    $display("reset:");
+      t.control_knob = transaction#(DEPTH, DATA_WIDTH)::rest;
+        generate_transactions(1, debug);
+
+        $display("\nwrite random values");
+       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_rand;
+        generate_transactions(2, debug);
+
+
+        $display("\nread:");
+        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::read;
+        generate_transactions(2, debug);
+
+endtask
+
 
 endclass //generator
+
+
+

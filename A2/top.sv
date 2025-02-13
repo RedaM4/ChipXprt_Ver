@@ -26,16 +26,22 @@ module tb;
 
     // Reset logic
     initial begin
-        
+             
         env = new(vif);
         
-            env.run();
-             
-        
-        
-      
+        env.run();
 
+
+             
     end
    
+
+
+
+   initial begin
+    #300;
+        $finish;
+
+   end
 endmodule
 
