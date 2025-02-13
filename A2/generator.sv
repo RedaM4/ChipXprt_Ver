@@ -13,9 +13,9 @@ class Generator #(parameter DEPTH=8, DATA_WIDTH=8);
 task run(bit debug =1);
      scen1() ; 
     // $display("🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 ");
-    scen2() ; 
+  //  scen2() ; 
     // $display("🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 ");
-    //  scen3() ; 
+      scen3() ; 
     //  $display("🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 ");
     //  scen4() ; 
     //  $display("🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 🎯 ");
@@ -106,18 +106,16 @@ task scen3(bit debug =1) ;
       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::rest;
         generate_transactions(1, debug);
 
-      $display("\nwrite random values");
+    $display("\nwrite random values");
        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_rand;
         generate_transactions(1, debug);
 
-     $display("\nfull and empty signals:");
-        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::fe;
+      $display("\nwrite and read");
+       t.control_knob = transaction#(DEPTH, DATA_WIDTH)::wr_and_rd;
         generate_transactions(1, debug);
 
     
-        $display("\nread:");
-        t.control_knob = transaction#(DEPTH, DATA_WIDTH)::read;
-        generate_transactions(2, debug);
+        
 
 endtask
 

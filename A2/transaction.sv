@@ -4,7 +4,8 @@ class transaction#(parameter DATA_WIDTH = 8, DEPTH=8 );
        wr_rand,
        read,
        rest,
-       fe
+       fe,
+       wr_and_rd
     } control_knob_t;
     
     
@@ -79,8 +80,15 @@ constraint read_signals{
         wr_en == 0;             //  Write enable set
         rd_en == 0;             //  Read disabled
     }
+}//wr_and_rd
+
+constraint writeandread{
+    if (control_knob == wr_and_rd) { //  Ensure correct enum reference
+        data_in inside {[8'h20 : 8'h7F]};
+        rst_n == 1;             //  Active low reset
+        wr_en == 1;             //  Write enable set
+        rd_en == 1;             //  Read disabled
+    }
 }
-
-
 
 endclass //transaction

@@ -25,7 +25,7 @@ class Environment#(parameter DEPTH=8, DATA_WIDTH=8);
         gen = new(gen2drv);
         drv = new(gen2drv, vif);
         mon = new(mon2scb, vif);
-        scb = new( mon2scb,vif,13);
+        scb = new( mon2scb,vif,7);
     endfunction
 
     // Task to start all testbench components
