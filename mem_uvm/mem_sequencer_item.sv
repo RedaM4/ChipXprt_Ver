@@ -1,64 +1,66 @@
 //`timescale 1ns/1ns
 class mem_sequencer_item extends uvm_sequence_item;
-    `uvm_component_utils(mem_sequencer_item)
-    
-  typedef enum {
-        wr_zero, // Constraint a: Printable ASCII characters
-       wr_rand,
-       rd
-       
-    } control_knob_t;
-  
-  control_knob_t control_knob;
+    `uvm_object_utils(mem_sequencer_item)
 
   //--------------------------------------------------------
   //Instantiation
   //--------------------------------------------------------
-    bit read;
-    bit write;
-    randc bit [4:0] addr;
-    rand bit [7:0] data_in;
+   logic  read;
+    logic  write;
+    logic  [4:0] addr;
+    logic  [7:0] data_in;
   
     logic [7:0] data_out; //output
- // bit carry_out; // output
-
-  //--------------------------------------------------------
-  //Default Constraints
-  //--------------------------------------------------------
-
-//   constraint input1_c {a inside {[10:20]};}
-//   constraint input2_c {b inside {[1:10]};}
-//   constraint op_code_c {op_code inside {0,1,2,3};}
-  
-  constraint write_zero{  
-       if (control_knob == wr_zero) {
-       data_in inside {0}; 
-        read == 0;
-        write==1 ;
-            }
-                   }
 
 
- constraint write_rand{  
-       if (control_knob == wr_rand) {
-        read == 0;
-        write==1 ;
-            }
-                   }
+//--------------------------------------------------------
+    // Functional Coverage
+    //--------------------------------------------------------
+    covergroup mem_coverage ;
+      coverpoint write {
+          bins wr_bin[] = {0, 1};  }
+
+      coverpoint read {
+        bins rd_bin[] = {0, 1};       }
 
 
-constraint Read{
-    if (control_knob == rd) { //  Ensure correct enum reference
-        write == 0;             //  Write enable set
-        read == 1;             //  Read disabled
+    coverpoint addr {
+        bins low_range = {[0:7]};    
+        bins mid_range = {[8:15]};  
+        bins high_range = {[16:31]}; 
     }
-}
+
+    coverpoint data_in{  
+      bins zero = {0};  
+      bins random_range = {[1:25]};}
+
+      
+   // cross write, addr,data_in;  
+   // cross read, addr;
+
+
+endgroup
+
+
+
 
   //--------------------------------------------------------
   //Constructor
   //--------------------------------------------------------
   function new(string name = "mem_sequencer_item");
     super.new(name);
-
+    mem_coverage = new();
   endfunction: new
+
+
+
+  //--------------------------------------------------------
+    // Sample Coverage
+    //--------------------------------------------------------
+    task sample_coverage();
+        mem_coverage.sample();
+    endtask
+
+
+
 endclass //mem_sequencer_item extends superClass

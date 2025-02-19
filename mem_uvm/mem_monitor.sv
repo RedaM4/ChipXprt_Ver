@@ -10,11 +10,11 @@ class mem_monitor extends uvm_monitor;
 
   
   //--------------------------------------------------------
-  //Constructor
+  //Consitemuctor
   //--------------------------------------------------------
   function new(string name = "mem_monitor", uvm_component parent);
     super.new(name, parent);
-    `uvm_info("MONITOR_CLASS", "Inside Constructor!", UVM_HIGH)
+    `uvm_info("MONITOR_CLASS", "Inside Consitemuctor!", UVM_HIGH)
   endfunction: new
   
   
@@ -54,25 +54,31 @@ class mem_monitor extends uvm_monitor;
   task run_phase (uvm_phase phase);
     super.run_phase(phase);
     `uvm_info("MONITOR_CLASS", "Inside Run Phase!", UVM_HIGH)
-    
-    forever begin
       item = mem_sequencer_item::type_id::create("item");
+
+   @(negedge vif.clk);
+    forever begin
       
-      //wait(!vif.reset);
-      
-      //sample inputs
-      @(posedge vif.clk);
-      if (vif.read) begin
-        item.data_out = vif.data_out;
-      end
+      @(posedge vif.clk);    
+
+              item.data_in = vif.data_in ; 
+             // item.rst_n =vif.rst_n;
+              item.write= vif.write;
+              item.read = vif.read ;
+              @(negedge vif.clk);
+               item.data_out = vif.data_out;
   
-      
-      // send item to scoreboard
+             // if (item.write) 
+
       monitor_port.write(item);
     end
         
   endtask: run_phase
   
+
+
+
+
 
 
 

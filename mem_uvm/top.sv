@@ -1,5 +1,5 @@
 
-// `timescale 1ns/1ns
+`timescale 1ns/1ns
 
 import uvm_pkg::*;
 `include "uvm_macros.svh"
@@ -18,17 +18,27 @@ import uvm_pkg::*;
 `include "mem_env.sv"            
 `include "memory.sv"             
 `include "mem_test.sv"           
-
+//    timeunit 1ns;
+// timeprecision 1ns;
 module top;
     
-
+logic clock;
 //--------------------------------------------------------
   //Instantiation
   //--------------------------------------------------------
-mem_intf memory(.clk(clock));
+mem_intf intf(clock);
 
-mem dut(intf) ; 
+// mem dut(intf) ; 
     
+
+    mem dut (
+        .clk      (intf.clk),
+        .read     (intf.read),
+        .write    (intf.write),
+        .addr     (intf.addr),
+        .data_in  (intf.data_in),
+        .data_out (intf.data_out)
+    );
 
 
   //--------------------------------------------------------
@@ -44,6 +54,7 @@ mem dut(intf) ;
   //--------------------------------------------------------
   initial begin
     run_test("mem_test");
+   // uvm_report_server::get_server().summarize();
   end
   
   
@@ -55,10 +66,11 @@ mem dut(intf) ;
     #5;
     forever begin
       clock = ~clock;
-      #2;
+      #5;
     end
   end
-  
+  //   bit clock = 0;
+  // always #5 clock = ~clock;
   
   //--------------------------------------------------------
   //Maximum Simulation Time

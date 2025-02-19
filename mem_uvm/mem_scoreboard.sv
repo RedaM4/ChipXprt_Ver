@@ -54,18 +54,24 @@ class mem_scoreboard extends uvm_test;
     super.run_phase(phase);
     `uvm_info("SCB_CLASS", "Run Phase!", UVM_HIGH)
    // mem_sequencer_item curr_trans;
-   
-    forever begin
-        
-      if (curr_trans.write) begin
-        mem[curr_trans.addr]=curr_trans.data_in ; 
+        for (int i = 0; i < 32; i++) begin
+          mem[i] = 0; 
       end
 
-
+   
+   curr_trans = new ; 
+    forever begin
+        
      
       wait((transactions.size() != 0));
       curr_trans = transactions.pop_front();
-      compare(curr_trans);
+
+        if (curr_trans.write ==1) begin
+                mem[curr_trans.addr]=curr_trans.data_in ; 
+              end
+  if ( curr_trans.read ==1) begin
+          compare(curr_trans);
+  end
       
     end
 
@@ -73,14 +79,15 @@ class mem_scoreboard extends uvm_test;
     
 
 task  compare(mem_sequencer_item curr_trans);
-     if (curr_trans.data_out == mem[curr_trans.addr]) begin
+     if (curr_trans.data_out == mem[curr_trans.addr]  ) begin
         $display("[SCOREBOARD] ✅ PASS -> Data Matched:" );
-        $display("  Expected -> data_out = %d,address:%d",mem[curr_trans.addr],curr_trans.addr);
-        $display("  Actual   -> data_out = %d,address:%d", curr_trans.data_out,curr_trans.addr);
+        // $display("  Expected -> data_out = %0d,address:%0d",mem[curr_trans.addr],curr_trans.addr);
+        // $display("  Actual   -> data_out = %0d,address:%0d", curr_trans.data_out,curr_trans.addr);
     end else begin
       $display("[SCOREBOARD] ❌ ERROR -> Mismatch!");
-      $display("  Expected -> data_out = %d,address:%d",mem[curr_trans.addr],curr_trans.addr);
-      $display("  Actual   -> data_out = %d,address:%d", curr_trans.data_out,curr_trans.addr);
+      // $display("  Expected -> data_out = %0d,address:%0d",mem[curr_trans.addr],curr_trans.addr);
+      // $display("  Actual   -> data_out = %0d,address:%0d", curr_trans.data_out,curr_trans.addr);
+      show() ; 
     end
     
      
@@ -88,7 +95,15 @@ task  compare(mem_sequencer_item curr_trans);
 
 endtask : compare
 
-  
+  task  show();
+    $display("[SCOREBOARD]  Expected -> data_out = %0d, address = %0d | Write = %0b | Read = %0b", 
+              mem[curr_trans.addr], curr_trans.addr, curr_trans.write, curr_trans.read);
+    $display("[SCOREBOARD]  Actual   -> data_out = %0d, address = %0d | Write = %0b | Read = %0b | data_in : %0d\n", 
+              curr_trans.data_out, curr_trans.addr, curr_trans.write, curr_trans.read,curr_trans.data_in);
+
+
+
+  endtask //
 
 
 

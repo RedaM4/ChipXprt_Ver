@@ -12,6 +12,7 @@
                  write  read     
 */
 // `timescale 1ns/1ns
+// `timescale 1ns/1ns
 
 module mem (
         input        clk,
@@ -20,7 +21,12 @@ module mem (
 	input  logic [4:0] addr  ,
 	input  logic [7:0] data_in  ,
         output logic [7:0] data_out
+
+
 	   );
+
+
+     
 // SYSTEMVERILOG: timeunit and timeprecision specification
 // timeunit 1ns;
 // timeprecision 1ns;

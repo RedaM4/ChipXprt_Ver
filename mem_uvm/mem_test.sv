@@ -1,9 +1,10 @@
 //`timescale 1ns/1ns
 
 class mem_test extends uvm_test;
-    
+      `uvm_component_utils(mem_test)
+
 mem_env env ;
-mem_base_seq reset_seq ;
+//mem_base_seq reset_seq ;
 mem_test_seq test_seq  ;
 
 
@@ -48,17 +49,25 @@ mem_test_seq test_seq  ;
 
     phase.raise_objection(this);
 
-    //reset_seq
-    reset_seq = mem_base_seq::type_id::create("reset_seq");
-    reset_seq.start(env.agnt.seqr);
-    #10;
+    // //reset_seq
+    // reset_seq = mem_base_seq::type_id::create("reset_seq");
+    // reset_seq.start(env.agnt.seqr);
+    //  #10;
 
-    repeat(100) begin
+   // repeat(100) begin
       //test_seq
-      test_seq = mem_test_seq::type_id::create("test_seq");
+    //  repeat(20)begin
+         test_seq = mem_test_seq::type_id::create("test_seq");
+
+     if (!test_seq)
+    `uvm_fatal("TEST_CLASS", "Failed to create test_seq!");
+     
       test_seq.start(env.agnt.seqr);
-      #10;
-    end
+      // #10;
+   //   end
+     
+    //   #10;
+    // end
     
     phase.drop_objection(this);
 
