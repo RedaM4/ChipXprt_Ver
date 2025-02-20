@@ -75,11 +75,11 @@ mem_intf intf(clock);
   //--------------------------------------------------------
   //Maximum Simulation Time
   //--------------------------------------------------------
-  initial begin
-    #5000;
-    $display("Sorry! Ran out of clock cycles!");
-    $finish();
-  end
+  // initial begin
+  //   #25000;
+  //   $display("Sorry! Ran out of clock cycles!");
+  //   $finish();
+  // end
 
 
 endmodule

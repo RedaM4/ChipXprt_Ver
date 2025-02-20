@@ -53,7 +53,8 @@ class mem_scoreboard extends uvm_test;
   task run_phase (uvm_phase phase);
     super.run_phase(phase);
     `uvm_info("SCB_CLASS", "Run Phase!", UVM_HIGH)
-   // mem_sequencer_item curr_trans;
+  //  mem_sequencer_item curr_trans;
+
       //   for (int i = 0; i < 32; i++) begin
       //     mem[i] = 0; 
       // end
@@ -69,6 +70,11 @@ class mem_scoreboard extends uvm_test;
       $display("[SCOREBOARD]  Actual   -> data_out = %0d, address = %0d | Write = %0b | Read = %0b | data_in : %0d\n", 
               curr_trans.data_out, curr_trans.addr, curr_trans.write, curr_trans.read,curr_trans.data_in);      
        
+
+        if (curr_trans.write ==1 && curr_trans.read ==1) begin
+           `uvm_info("SCB_CLASS", "read and write so (ignore)", UVM_HIGH)
+        end else
+
         if (curr_trans.write ==1) begin
           `uvm_info("SCB_CLASS", "add to the array", UVM_HIGH)
                 mem[curr_trans.addr]=curr_trans.data_in ; 
@@ -78,8 +84,13 @@ class mem_scoreboard extends uvm_test;
         else if ( curr_trans.read ==1) begin
                 compare();
                 `uvm_info("SCB_READING", " receiving read !", UVM_LOW)
-        end else `uvm_info("SCB_IDLE", " receiving read !", UVM_LOW)
+        end // `uvm_info("SCB_IDLE", " receiving read !", UVM_LOW)
+   
       
+
+
+    
+
     end
 
   endtask:run_phase
@@ -88,7 +99,7 @@ class mem_scoreboard extends uvm_test;
 task  compare( );
      if (curr_trans.data_out == mem[curr_trans.addr]  ) begin
   `uvm_info("COMPARE", $sformatf("✅Transaction Passed! ACT=%0d, EXP=%0d", curr_trans.data_out , mem[curr_trans.addr]), UVM_HIGH)        
-        // $display("  Actual   -> data_out = %0d,address:%0d", curr_trans.data_out,curr_trans.addr);
+       
     end else begin
      `uvm_error("COMPARE", $sformatf("🔴Transaction failed! ACT=%0d, EXP=%0d", curr_trans.data_out , mem[curr_trans.addr]))
            

@@ -55,14 +55,14 @@ mem_base_seq base_seq  ;
     base_seq.start(env.agnt.seqr);
        #10;
 
+    // `uvm_info("TEST_CLASS", "✅base test finished", UVM_HIGH)
 
-
-      // test_seq = mem_test_seq::type_id::create("test_seq");
-      // if (!test_seq)
-      //     `uvm_fatal("TEST_CLASS", "Failed to create test_seq!");
+      test_seq = mem_test_seq::type_id::create("test_seq");
+      if (!test_seq)
+          `uvm_fatal("TEST_CLASS", "Failed to create test_seq!");
      
      
-      // test_seq.start(env.agnt.seqr);
+      test_seq.start(env.agnt.seqr);
 
 
 

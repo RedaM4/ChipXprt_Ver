@@ -15,6 +15,8 @@ class mem_monitor extends uvm_monitor;
   function new(string name = "mem_monitor", uvm_component parent);
     super.new(name, parent);
     `uvm_info("MONITOR_CLASS", "Inside Consitemuctor!", UVM_HIGH)
+        mem_coverage = new();
+
   endfunction: new
   
   
@@ -70,6 +72,7 @@ class mem_monitor extends uvm_monitor;
                item.data_out = vif.data_out;
   
              // if (item.write) 
+                        mem_coverage.sample();
       `uvm_info("MONITOR", "Sending !", UVM_LOW)
       monitor_port.write(item);
     end
@@ -79,6 +82,39 @@ class mem_monitor extends uvm_monitor;
 
 
 
+//--------------------------------------------------------
+    // Functional Coverage
+    //--------------------------------------------------------
+    covergroup mem_coverage ;
+      coverpoint vif.write {
+          bins wr_zero = {0}; 
+            bins wr_one= {1};  
+
+          
+           }
+
+      coverpoint vif.read {
+        bins rd_zero = {0};     
+        bins rd_one= {1};  
+          }
+
+
+    coverpoint vif.addr {
+        bins all_addr[] = {[0:31]};    
+        // bins mid_range = {[8:15]};  
+        // bins high_range = {[16:31]}; 
+    }
+
+    coverpoint vif.data_in{  
+      bins zero = {0};  
+      bins random_range = {[1:255]};}
+
+      
+   cross vif.write, vif.addr,vif.data_in;  
+   cross vif.read, vif.addr;
+
+
+endgroup
 
 
 

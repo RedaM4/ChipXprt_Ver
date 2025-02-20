@@ -35,7 +35,7 @@ class mem_base_seq extends uvm_sequence;
 finish_item(base_seq);
 // #10;
   end
-//just for testing
+// just for testing
     for (int i =0 ;i<32 ;i++ ) begin
 
           start_item(base_seq);
@@ -77,14 +77,44 @@ class mem_test_seq extends mem_base_seq ;
     `uvm_info("TEST_SEQ", "Inside body task!", UVM_HIGH)
     
     item = mem_sequencer_item::type_id::create("item");
-    repeat(20)begin
-    start_item(item);
 
-     item.sample_coverage();
+      for (int i =0 ;i<32 ;i++ ) begin
+          start_item(item);
+        
+            item.addr = i; 
+            item.data_in = 0;
+            item.read = 0;
+            item.write = 1;
+
     finish_item(item);
+    // #10;
+      end
+
+
+
+    repeat(10000)begin
+    start_item(item);
+    item.randomize();
+     //item. seq_coverage.sample();
+    //   item.read = 0;
+    // item.write = 1;
+       $display("[mem_seq]  Actual   -> ---------, address = %0d | Write = %0b | Read = %0b | data_in : %0d\n", 
+              item.addr, item.write, item.read, item.data_in);
+  
+
+     finish_item(item);
        end
 
+//  for (int i =0 ;i<32 ;i++ ) begin
 
+//           start_item(item);
+//     item.addr = i; 
+//         item.data_in = 0;
+//         item.read = 1;
+//         item.write = 0;
+
+// finish_item(item);
+//     end
 
   endtask: body
 

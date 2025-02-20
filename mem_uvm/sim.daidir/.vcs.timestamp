@@ -269,7 +269,7 @@
 0 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/systemverilog/reg/snps_uvm_reg_bank.svh
 0 vcs/vcs_uvm_alt.sv
 0 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/systemverilog/vcs/vcs_uvm_alt.sv
-33
+35
 +define+UVM_DIRECTC_OPTS
 +incdir+/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm
 +incdir+/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/
@@ -291,6 +291,7 @@
 -Mxcflags= -pipe -m32 -DVCS -DUVM_DPI_DO_TYPE_CHECK -I/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/include
 -Mxllcflags=
 -P
+-cm_dir
 -gen_obj
 -ntb_opts
 -o sim
@@ -301,6 +302,7 @@
 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/uvm_pkg.sv
 uvm
 sim
+cov_dir
 top.sv
 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/vcsdstub.tab
 108
@@ -311,7 +313,7 @@ XDG_DATA_DIRS=/home/Reda_Alhashem/.local/share/flatpak/exports/share:/var/lib/fl
 XA_HOME=/mnt/NVME2/synopsys/xa
 VUI_HOME=/mnt/NVME2/synopsys/vui
 VTRAN_HOME=/mnt/NVME2/synopsys/vtran
-VSCODE_IPC_HOOK_CLI=/run/user/1044/vscode-ipc-c8e1d6dd-1642-464e-92a8-42a7899ecd1d.sock
+VSCODE_IPC_HOOK_CLI=/run/user/1044/vscode-ipc-e5a6611d-1014-4875-b3cd-f28f68e59b69.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1044/vscode-git-20fb2e4c11.sock
 VSCODE_GIT_ASKPASS_NODE=/home/Reda_Alhashem/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/node
 VSCODE_GIT_ASKPASS_MAIN=/home/Reda_Alhashem/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/extensions/git/dist/askpass-main.js
@@ -415,16 +417,16 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 0
 0
 149
-1740049378 mem_test.sv
+1740055261 mem_test.sv
 1740043635 memory.sv
 1739881552 mem_env.sv
 1739968804 mem_agent.sv
-1740051530 mem_scoreboard.sv
-1740051717 mem_monitor.sv
+1740057440 mem_scoreboard.sv
+1740059481 mem_monitor.sv
 1740051680 mem_driver.sv
 1739880984 mem_sequencer.sv
-1740050876 mem_sequence.sv
-1740048850 mem_sequencer_item.sv
+1740059497 mem_sequence.sv
+1740054526 mem_sequencer_item.sv
 1739952897 mem_intf.sv
 1733289098 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/vcs/vcs_uvm_alt.sv
 1733289097 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/reg/snps_uvm_reg_bank.svh
@@ -571,5 +573,5 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 1733285572 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/liberrorinf.so
 1733285568 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/libsnpsmalloc.so
 1733285558 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/libvfs.so
-1740051728 sim.daidir
+1740059557 sim.daidir
 -1 partitionlib

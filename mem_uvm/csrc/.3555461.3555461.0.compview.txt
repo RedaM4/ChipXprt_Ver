@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1740059763.097178271, "rt":0.14, "ut":0.04, "st":0.08}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1740059762.702301085}
+{"VCS_COMP_START_TIME": 1740059762.702301085}
+{"VCS_COMP_END_TIME": 1740059763.279290318}
+{"VCS_USER_OPTIONS": "-sverilog -ntb_opts uvm +vcs+lic+check +coverage +define+FCOV -timescale=1ns/1ns top.sv -o simv"}

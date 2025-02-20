@@ -1,0 +1,145 @@
+global coverage_group 0 0 $unit::mem_monitor::mem_coverage __coverage_mem_monitor.mem_coverage unused_mem_monitor_mem_coverage_loop_label $unit 0 1 0 1 $unit::/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/snps_macros.svp::/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/uvm_callback_defines.svh...@2362366710 0  ( 0 
+)
+ 1 1
+ 0 51 /home/Reda_Alhashem/chip_ver/mem_uvm/mem_monitor.sv
+ 88 0 0 0 1 0 0 0 0  1
+0
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+0
+0
+0
+64
+0
+ 0
+
+4
+0
+2
+0
+ 9 vif.write 89 0 0 0 0 0 0 62 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn 62 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 7 wr_zero 90 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 6 wr_one 91 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 8 vif.read 96 0 0 0 0 0 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_2 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 7 rd_zero 97 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 6 rd_one 98 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 8 vif.addr 102 0 0 0 0 0 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_3 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_3 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 5 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 1 1 1 1 0 1 1 8 all_addr 103 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_4 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_5 0 0 0 0 0
+ 0
+
+ 11 vif.data_in 108 0 0 0 0 0 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_6 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_6 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 8 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 4 zero 109 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_4 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 12 random_range 110 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_7 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_8 0 0 0 0 0
+ 0
+
+ 15 mem_coverage_cc 0 113 0 0 -1 0 0 0 0 3 0 2 3 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 17 mem_coverage_cc_0 0 114 0 0 -1 0 0 0 0 2 1 2 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group

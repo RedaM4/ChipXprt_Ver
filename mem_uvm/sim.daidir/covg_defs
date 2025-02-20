@@ -1,8 +1,125 @@
-global coverage_group 0 0 $unit::mem_sequencer_item::mem_coverage __coverage_mem_sequencer_item.mem_coverage unused_mem_sequencer_item_mem_coverage_loop_label $unit 0 1 0 1 $unit::/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/snps_macros.svp::/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/uvm_callback_defines.svh...@2362366710 0  ( 0 
+global coverage_group 0 0 $unit::mem_sequencer_item::seq_coverage __coverage_mem_sequencer_item.seq_coverage unused_mem_sequencer_item_seq_coverage_loop_label $unit 0 1 0 1 $unit::/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/snps_macros.svp::/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/uvm_callback_defines.svh...@2362366710 0  ( 0 
 )
- 1 1
+ 1 2
  0 58 /home/Reda_Alhashem/chip_ver/mem_uvm/mem_sequencer_item.sv
- 19 0 0 0 1 0 0 0 0  1
+ 51 /home/Reda_Alhashem/chip_ver/mem_uvm/mem_monitor.sv
+ 26 0 0 0 1 0 0 0 0  1
+0
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+0
+0
+0
+64
+0
+ 0
+
+4
+0
+1
+0
+ 5 write 27 0 0 0 0 0 0 76 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_seq_coverage_fn 76 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_seq_coverage_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 4 read 28 0 0 0 0 0 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_seq_coverage_fn_0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_seq_coverage_fn_0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 4 addr 29 0 0 0 0 0 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_seq_coverage_fn_1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_seq_coverage_fn_1 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 5 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 7 data_in 30 0 0 0 0 0 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_seq_coverage_fn_2 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_seq_coverage_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 8 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 15 seq_coverage_cc 0 31 0 0 -1 0 0 0 0 3 0 2 3 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group
+global coverage_group 0 0 $unit::mem_monitor::mem_coverage __coverage_mem_monitor.mem_coverage unused_mem_monitor_mem_coverage_loop_label $unit 0 1 0 1 $unit::/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/snps_macros.svp::/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/uvm_callback_defines.svh...@2362366710 0  ( 0 
+)
+ 0 88 1 0 0 1 0 0 0 0  1
 0
 0
 0 0
@@ -38,7 +155,7 @@ global coverage_group 0 0 $unit::mem_sequencer_item::mem_coverage __coverage_mem
 0
 0
 0
- 5 write 20 0 0 0 0 0 0 76 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn 76 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 9 vif.write 89 1 0 0 0 0 0 62 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn 62 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
  0
  0
  0
@@ -53,11 +170,11 @@ global coverage_group 0 0 $unit::mem_sequencer_item::mem_coverage __coverage_mem
  0
  0
  0
- 1 1 1 1 0 1 1 6 wr_bin 21 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_0 0 0 0 0 0 0 0
- 1 1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_1 0 0 0 0 0 0 0
+ 1 1 1 1 0 1 1 6 wr_bin 90 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_0 0 0 0 0 0 0 0
+ 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_1 0 0 0 0 0 0 0
  0
 
- 4 read 23 0 0 0 0 0 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_2 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 8 vif.read 92 1 0 0 0 0 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_2 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
  0
  0
  0
@@ -72,11 +189,11 @@ global coverage_group 0 0 $unit::mem_sequencer_item::mem_coverage __coverage_mem
  0
  0
  0
- 1 1 1 1 0 1 1 6 rd_bin 24 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_0 0 0 0 0 0 0 0
- 1 1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_1 0 0 0 0 0 0 0
+ 1 1 1 1 0 1 1 6 rd_bin 93 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_0 0 0 0 0 0 0 0
+ 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_1 0 0 0 0 0 0 0
  0
 
- 4 addr 27 0 0 0 0 0 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_3 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_3 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 5 0 0 1 0 0 0 0
+ 8 vif.addr 96 1 0 0 0 0 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_3 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_3 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 5 0 0 1 0 0 0 0
  0
  0
  0
@@ -91,14 +208,14 @@ global coverage_group 0 0 $unit::mem_sequencer_item::mem_coverage __coverage_mem
  0
  0
  0
- 3 1 1 0 0 1 1 9 low_range 28 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_4 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_5 0 0 0 0 0
+ 3 1 1 0 0 1 1 9 low_range 97 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_4 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_5 0 0 0 0 0
  0
- 1 1 0 0 1 1 9 mid_range 29 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_6 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_7 0 0 0 0 0
+ 1 1 0 0 1 1 9 mid_range 98 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_6 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_7 0 0 0 0 0
  0
- 1 1 0 0 1 1 10 high_range 30 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_8 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_9 0 0 0 0 0
+ 1 1 0 0 1 1 10 high_range 99 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_8 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_9 0 0 0 0 0
  0
 
- 7 data_in 33 0 0 0 0 0 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_a 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_a 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 8 0 0 1 0 0 0 0
+ 11 vif.data_in 102 1 0 0 0 0 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_a 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_a 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 8 0 0 1 0 0 0 0
  0
  0
  0
@@ -113,9 +230,9 @@ global coverage_group 0 0 $unit::mem_sequencer_item::mem_coverage __coverage_mem
  0
  0
  0
- 2 1 1 0 0 1 1 4 zero 34 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_4 0 0 0 0 0 0 0
+ 2 1 1 0 0 1 1 4 zero 103 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_4 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 12 random_range 35 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_b 0 78 mem_sequencer_item::_vcs_unit__2362366710_mem_sequencer_item_mem_coverage_fn_c 0 0 0 0 0
+ 1 1 0 0 1 1 12 random_range 104 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_b 0 64 mem_monitor::_vcs_unit__2362366710_mem_monitor_mem_coverage_fn_c 0 0 0 0 0
  0
 
 end_coverage_group

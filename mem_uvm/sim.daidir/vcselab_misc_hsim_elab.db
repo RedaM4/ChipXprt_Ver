@@ -659,7 +659,7 @@ fHsimMdbPartInputLimit             	1
 fHsimSdfData                       	0
 fHsimDesignHasSdfAnnotation        	0
 fHsimDesignUsesParallelVcs         	0
-fHsimCMEnabled                     	0
+fHsimCMEnabled                     	1
 fHsimNotDelRefData                 	0
 fGblPulseDecayData                 	0
 fGblPulsePartCtrl                  	0
