@@ -55,21 +55,22 @@ class mem_monitor extends uvm_monitor;
     super.run_phase(phase);
     `uvm_info("MONITOR_CLASS", "Inside Run Phase!", UVM_HIGH)
       item = mem_sequencer_item::type_id::create("item");
+// @(posedge vif.clk);
 
-   @(negedge vif.clk);
+    @(negedge vif.clk);   
     forever begin
-      
-      @(posedge vif.clk);    
-
+          
+          @(posedge vif.clk);
               item.data_in = vif.data_in ; 
              // item.rst_n =vif.rst_n;
+             item.addr=vif.addr ;
               item.write= vif.write;
               item.read = vif.read ;
-              @(negedge vif.clk);
+             @(negedge vif.clk);
                item.data_out = vif.data_out;
   
              // if (item.write) 
-
+      `uvm_info("MONITOR", "Sending !", UVM_LOW)
       monitor_port.write(item);
     end
         

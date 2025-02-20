@@ -305,13 +305,13 @@ top.sv
 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/vcsdstub.tab
 108
 which_declare=declare -f
-XDG_SESSION_ID=499
+XDG_SESSION_ID=701
 XDG_RUNTIME_DIR=/run/user/1044
 XDG_DATA_DIRS=/home/Reda_Alhashem/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 XA_HOME=/mnt/NVME2/synopsys/xa
 VUI_HOME=/mnt/NVME2/synopsys/vui
 VTRAN_HOME=/mnt/NVME2/synopsys/vtran
-VSCODE_IPC_HOOK_CLI=/run/user/1044/vscode-ipc-4f74e7bb-8d2f-41b9-a49f-2f546046fd1c.sock
+VSCODE_IPC_HOOK_CLI=/run/user/1044/vscode-ipc-c8e1d6dd-1642-464e-92a8-42a7899ecd1d.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1044/vscode-git-20fb2e4c11.sock
 VSCODE_GIT_ASKPASS_NODE=/home/Reda_Alhashem/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/node
 VSCODE_GIT_ASKPASS_MAIN=/home/Reda_Alhashem/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/extensions/git/dist/askpass-main.js
@@ -347,8 +347,8 @@ SYN_HOME=/mnt/NVME2/synopsys/syn
 STARRC_HOME=/mnt/NVME2/synopsys/starrc
 SSL_CERT_FILE=/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
 SSL_CERT_DIR=/etc/pki/tls/certs
-SSH_CONNECTION=192.168.1.61 33062 192.168.1.8 22
-SSH_CLIENT=192.168.1.61 33062 22
+SSH_CONNECTION=192.168.1.61 32878 192.168.1.8 22
+SSH_CLIENT=192.168.1.61 32878 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SPYGLASS_HOME=/mnt/NVME2/synopsys/spyglass
 SNPS_VCS_PYTHON3=/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/bin/Python3/bin/python3
@@ -415,16 +415,16 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 0
 0
 149
-1739968759 mem_test.sv
-1739965114 memory.sv
+1740049378 mem_test.sv
+1740043635 memory.sv
 1739881552 mem_env.sv
-1739881612 mem_agent.sv
-1739962408 mem_scoreboard.sv
-1739964685 mem_monitor.sv
-1739967334 mem_driver.sv
+1739968804 mem_agent.sv
+1740051530 mem_scoreboard.sv
+1740051717 mem_monitor.sv
+1740051680 mem_driver.sv
 1739880984 mem_sequencer.sv
-1739968418 mem_sequence.sv
-1739966695 mem_sequencer_item.sv
+1740050876 mem_sequence.sv
+1740048850 mem_sequencer_item.sv
 1739952897 mem_intf.sv
 1733289098 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/vcs/vcs_uvm_alt.sv
 1733289097 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/reg/snps_uvm_reg_bank.svh
@@ -561,7 +561,7 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 1733289097 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/snps_macros.svp
 1733289097 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/uvm_version_defines.svh
 1733289098 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/uvm_macros.svh
-1739965269 top.sv
+1740048784 top.sv
 1733289098 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/uvm_pkg.sv
 1733285140 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/vcsdstub.tab
 6
@@ -571,5 +571,5 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 1733285572 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/liberrorinf.so
 1733285568 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/libsnpsmalloc.so
 1733285558 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux/lib/libvfs.so
-1739968766 sim.daidir
+1740051728 sim.daidir
 -1 partitionlib

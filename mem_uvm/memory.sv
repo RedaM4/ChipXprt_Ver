@@ -11,6 +11,22 @@
                    |     |
                  write  read     
 */
+
+//--------------------------------------------------------
+// NOTE TO A VERIFICATION ENGINEER:
+//
+// AS A VERIFICATION ENGINEER, ONE SHOULD NEVER PEEK INTO
+// DESIGN AND TRY TO REVERSE ENGINEER WHAT'S HAPPENING.
+// JUST FOCUS ON GIVEN SPEC AND BUILD YOUR TESTBENCH ACCORDINGLY.
+//--------------------------------------------------------
+
+
+
+
+
+
+
+
 // `timescale 1ns/1ns
 // `timescale 1ns/1ns
 

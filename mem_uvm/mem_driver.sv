@@ -45,14 +45,14 @@ class mem_driver extends uvm_driver#(mem_sequencer_item);
   task run_phase (uvm_phase phase);
     super.run_phase(phase);
     `uvm_info("DRIVER_CLASS", "Inside Run Phase!", UVM_HIGH)
-    clear();
+   // clear();
 
 
     forever begin
       @(negedge vif.clk);
       item = mem_sequencer_item::type_id::create("item"); 
       seq_item_port.get_next_item(item);
-         `uvm_info("DRIVER_CLASS", "Got transaction from the sequencer!", UVM_LOW)
+         `uvm_info("DRIVER_CLASS", "Got transaction from the sequencer!", UVM_HIGH)
         vif.addr <= item.addr;
         vif.data_in <= item.data_in;
         vif.read <= item.read;
@@ -64,17 +64,6 @@ class mem_driver extends uvm_driver#(mem_sequencer_item);
     
   endtask: run_phase
   
-  
-task  clear();
-  for (int i =0 ;i<32 ;i++ ) begin
-      vif.addr <=i;
-        vif.data_in <= 0;
-        vif.read <= 0;
-        vif.write <= 1;
-  end
-
-
-endtask //
 
 
 endclass //mem_driver extends superClass

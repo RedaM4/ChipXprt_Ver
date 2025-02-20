@@ -6,7 +6,7 @@ class mem_scoreboard extends uvm_test;
     uvm_analysis_imp #(mem_sequencer_item,mem_scoreboard) scoreboard_port;
     mem_sequencer_item transactions[$];
    mem_sequencer_item curr_trans;
-   int mem[8] ; 
+   int mem[32] ; 
   //--------------------------------------------------------
   //Constructor
   //--------------------------------------------------------
@@ -54,9 +54,9 @@ class mem_scoreboard extends uvm_test;
     super.run_phase(phase);
     `uvm_info("SCB_CLASS", "Run Phase!", UVM_HIGH)
    // mem_sequencer_item curr_trans;
-        for (int i = 0; i < 32; i++) begin
-          mem[i] = 0; 
-      end
+      //   for (int i = 0; i < 32; i++) begin
+      //     mem[i] = 0; 
+      // end
 
    
    curr_trans = new ; 
@@ -65,34 +65,39 @@ class mem_scoreboard extends uvm_test;
      
       wait((transactions.size() != 0));
       curr_trans = transactions.pop_front();
-
+      `uvm_info("SCOREBOARD", "Receiving !", UVM_LOW)
+      $display("[SCOREBOARD]  Actual   -> data_out = %0d, address = %0d | Write = %0b | Read = %0b | data_in : %0d\n", 
+              curr_trans.data_out, curr_trans.addr, curr_trans.write, curr_trans.read,curr_trans.data_in);      
+       
         if (curr_trans.write ==1) begin
+          `uvm_info("SCB_CLASS", "add to the array", UVM_HIGH)
                 mem[curr_trans.addr]=curr_trans.data_in ; 
+                `uvm_info("SCB_WRITING", " receiving read !", UVM_LOW)
               end
-  if ( curr_trans.read ==1) begin
-          compare(curr_trans);
-  end
+
+        else if ( curr_trans.read ==1) begin
+                compare();
+                `uvm_info("SCB_READING", " receiving read !", UVM_LOW)
+        end else `uvm_info("SCB_IDLE", " receiving read !", UVM_LOW)
       
     end
 
   endtask:run_phase
     
 
-task  compare(mem_sequencer_item curr_trans);
+task  compare( );
      if (curr_trans.data_out == mem[curr_trans.addr]  ) begin
-        $display("[SCOREBOARD] ✅ PASS -> Data Matched:" );
-        // $display("  Expected -> data_out = %0d,address:%0d",mem[curr_trans.addr],curr_trans.addr);
+  `uvm_info("COMPARE", $sformatf("✅Transaction Passed! ACT=%0d, EXP=%0d", curr_trans.data_out , mem[curr_trans.addr]), UVM_HIGH)        
         // $display("  Actual   -> data_out = %0d,address:%0d", curr_trans.data_out,curr_trans.addr);
     end else begin
-      $display("[SCOREBOARD] ❌ ERROR -> Mismatch!");
+     `uvm_error("COMPARE", $sformatf("🔴Transaction failed! ACT=%0d, EXP=%0d", curr_trans.data_out , mem[curr_trans.addr]))
+           
       // $display("  Expected -> data_out = %0d,address:%0d",mem[curr_trans.addr],curr_trans.addr);
       // $display("  Actual   -> data_out = %0d,address:%0d", curr_trans.data_out,curr_trans.addr);
-      show() ; 
+      //show() ; 
     end
     
      
-
-
 endtask : compare
 
   task  show();
@@ -104,6 +109,9 @@ endtask : compare
 
 
   endtask //
+
+
+
 
 
 
