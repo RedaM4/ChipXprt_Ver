@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1740400085.594189065, "rt":3.29, "ut":3.07, "st":0.17}}
+{"vcselab":{"timestamp_begin":1740400088.968373187, "rt":0.26, "ut":0.16, "st":0.10}}
+{"link":{"timestamp_begin":1740400089.289656915, "rt":0.23, "ut":0.11, "st":0.13}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1740400085.299988367}
+{"VCS_COMP_START_TIME": 1740400085.299988367}
+{"VCS_COMP_END_TIME": 1740400089.589208566}
+{"VCS_USER_OPTIONS": "-sverilog -ntb_opts uvm -timescale=1ns/1n /home/Reda_Alhashem/chip_ver/lab07/task2/testbench/top.sv -o simv"}
+{"vcs1": {"peak_mem": 284892}}
+{"vcselab": {"peak_mem": 133956}}

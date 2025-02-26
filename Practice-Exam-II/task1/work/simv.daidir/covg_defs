@@ -1,0 +1,114 @@
+global coverage_group 0 0 $unit::monitor::piso_coverage __coverage_monitor.piso_coverage unused_monitor_piso_coverage_loop_label $unit 0 1 0 1 $unit::../design/piso.sv::../testbench/agent.sv...@1083158314 0  ( 0 
+)
+ 1 1
+ 0 80 /home/Reda_Alhashem/chip_ver/Practice-Exam-II/task1/work/../testbench/monitor.sv
+ 88 0 0 0 1 0 0 0 0  1
+0
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+0
+0
+0
+64
+0
+ 0
+
+3
+0
+1
+0
+ 9 vif.rst_n 89 0 0 0 0 0 0 55 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn 55 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 1 1 1 0 0 1 1 9 reset_bin 89 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_0 0 0 0 0 0 0 0
+ 1 1 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 8 vif.load 90 0 0 0 0 0 0 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_2 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 1 1 1 0 0 1 1 8 load_bin 90 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_0 0 0 0 0 0 0 0
+ 1 1 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 10 vif.data_i 92 0 0 0 0 0 0 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_3 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_3 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 8 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 3 1 1 0 0 1 1 9 low_range 93 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_4 0 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_5 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 12 medium_range 94 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_6 0 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_7 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 10 high_range 95 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_8 0 57 monitor::_vcs_unit__1083158314_monitor_piso_coverage_fn_9 0 0 0 0 0
+ 0
+
+ 16 piso_coverage_cc 0 97 0 0 -1 0 0 0 0 3 0 1 2 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group
