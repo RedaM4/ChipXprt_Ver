@@ -68,7 +68,7 @@ if (!actual.rst_n ) begin //reset ==0
     for (int i  =0 ;i<8 ;i++ ) begin
         expected[i]=0 ; 
         temp=0;
-    end
+    end  end
 
 if (actual.load && actual.rst_n) begin   //load=1, rst=0
     
@@ -87,7 +87,7 @@ if (!actual.load && actual.rst_n) begin //load=0 , rst=1
 end
 
 
-end
+
 end
 endtask
 

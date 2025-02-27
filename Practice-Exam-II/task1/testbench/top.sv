@@ -48,7 +48,7 @@ piso_intf intf(clock);
   //Interface Setting
   //--------------------------------------------------------
     initial begin
-    uvm_config_db #(virtual piso_intf)::set(null, "*", "intf", intf );
+    uvm_config_db #(virtual piso_intf)::set(null, "*", "vif", intf );
   end
 
 

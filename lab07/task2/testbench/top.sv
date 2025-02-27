@@ -4,9 +4,9 @@
 
 import uvm_pkg::*;
 
+`include "../testbench/dut_if.sv"
 `include "../design/dut.sv"
 
-`include "../testbench/dut_if.sv"
 
 `include "../testbench/sequence_item.sv"
 `include "../testbench/my_sequence.sv"
@@ -27,7 +27,7 @@ always#5 clk=~clk ;
 
 initial begin
   
-     uvm_config_db #(virtual dut_if)::set(null, "*", "dut_if", inte );
+     uvm_config_db #(virtual dut_if)::set(null, "*", "vif", inte );
     run_test("my_test");
 end
 

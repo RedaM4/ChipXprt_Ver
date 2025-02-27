@@ -33,7 +33,7 @@ task run_phase(uvm_phase phase);
     phase.raise_objection(this);
     `uvm_info("TEST_CLASS", "run phase", UVM_LOW)
         #10;
-    `uvm_info("TEST_CLASS", "Hello World222", UVM_HIGH)
+    `uvm_info("TEST_CLASS", "Hello World222", UVM_LOW)
 
 
 
