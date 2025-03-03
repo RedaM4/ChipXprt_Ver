@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1741001430.130625329, "rt":0.13, "ut":0.04, "st":0.08}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1741001429.836562291}
+{"VCS_COMP_START_TIME": 1741001429.836562291}
+{"VCS_COMP_END_TIME": 1741001430.303685447}
+{"VCS_USER_OPTIONS": "-sverilog -timescale=1ns/10ps -full64 -f ../tb/filelist.f -ntb_opts -uvm -o simv"}
