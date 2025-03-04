@@ -1,4 +1,4 @@
-+UVM_VERBOSITY=UVM_FULL +UVM_TESTNAME=set_config_test +ntb_random_seed_automatic
++UVM_VERBOSITY=UVM_FULL  +ntb_random_seed_automatic +UVM_TESTNAME=set_config_test
 // +UVM_VERBOSITY=UVM_FULL +UVM_TESTNAME=short_packet_test +ntb_random_seed_automatic
 // +UVM_VERBOSITY=UVM_FULL +UVM_TESTNAME=base_test +ntb_random_seed_automatic
 

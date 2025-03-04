@@ -55,10 +55,12 @@ class short_packet_test extends base_test;
 
 function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-             tb = router_tb::type_id::create("tb",this);
     set_type_override_by_type(yapp_packet::get_type(),short_yapp_packet::get_type() );
-        uvm_config_wrapper::set(this, "tb.env.agnt.seqr.run_phase","default_sequence",short_yapp_packet::get_type());   
+        uvm_config_wrapper::set(this, "tb.env.agnt.seqr.run_phase","default_sequence",yapp_5_packets::get_type());   
          `uvm_info(get_type_name(), "Inside Build phase", UVM_HIGH)
+         //ssss
+
+
 
 uvm_config_int::set( this, "*", "recording_detail",1);
 
@@ -82,9 +84,9 @@ function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     uvm_config_db#(uvm_active_passive_enum)::set(this, "yapp_env.yapp_tx_agent", "is_active", UVM_PASSIVE);
 
-             tb = router_tb::type_id::create("tb",this);
-    // set_type_override_by_type(yapp_packet::get_type(),short_yapp_packet::get_type() );
-        uvm_config_wrapper::set(this, "tb.env.agnt.seqr.run_phase","default_sequence",short_yapp_packet::get_type());   
+           //  tb = router_tb::type_id::create("tb",this);
+    set_type_override_by_type(yapp_packet::get_type(),short_yapp_packet::get_type() );
+        uvm_config_wrapper::set(this, "tb.env.agnt.seqr.run_phase","default_sequence",yapp_5_packets::get_type());   
          `uvm_info(get_type_name(), "Inside Build phase", UVM_HIGH)
 
 uvm_config_int::set( this, "*", "recording_detail",1);
