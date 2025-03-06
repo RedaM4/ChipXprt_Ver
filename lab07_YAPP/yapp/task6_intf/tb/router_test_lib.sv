@@ -172,12 +172,13 @@ endclass //incr_payload_test extends base_test
 class yapp_012_test extends base_test;
       `uvm_component_utils(yapp_012_test)
 yapp_012_seq seq012 ; 
+yapp_incr_payload_seq seqinc ; 
  function new(string name = "yapp_012_test",uvm_component parent);
             super.new(name, parent);
 `uvm_info(get_type_name(), "Inside Constructor!", UVM_HIGH)
 // set_type_override();
 
-        uvm_config_wrapper::set(this, "tb.env.agnt.seqr.run_phase","default_sequence",yapp_012_seq::get_type());   
+       // uvm_config_wrapper::set(this, "tb.env.agnt.seqr.run_phase","default_sequence",yapp_012_seq::get_type());   
     endfunction 
 
 
@@ -185,14 +186,20 @@ function set_type_override();
      set_type_override_by_type(yapp_packet::get_type(),short_yapp_packet::get_type() );
 endfunction
 
-// task run_phase(uvm_phase phase );
-//     //run_phase(phase)
+task run_phase(uvm_phase phase );
+    //run_phase(phase)
 
-//  seq012 = yapp_012_seq::type_id::create("seq012",this);
-//     phase.raise_objection(this);
+ seq012 = yapp_012_seq::type_id::create("seq012",this);
+ seqinc = yapp_incr_payload_seq::type_id::create("seqinc",this);
+    phase.raise_objection(this);
+    
+   seq012.start(tb.env.agnt.seqr);
+   seqinc.start(tb.env.agnt.seqr);
 
-// // seq012.start(tb.env.agnt.seqr);
-//     phase.drop_objection(this);
 
-// endtask //run
+    phase.drop_objection(this);
+
+
+
+endtask //run
 endclass //cla

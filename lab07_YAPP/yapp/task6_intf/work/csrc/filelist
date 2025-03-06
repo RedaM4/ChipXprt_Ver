@@ -11,7 +11,7 @@ uvm_dpi.d : /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/dpi/uvm_dpi.cc $(CFLAG
 # will be overwritten the next time VCS is run
 DPI_ALLOW_MAIN_SO=
 VCS_LIBEXT=
-XTRN_OBJS=/usr/lib64/libnuma.so.1 uvm_dpi.o 
+XTRN_OBJS=/usr/lib64/libnuma.so.1 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux64/lib/vpdlogstub.o uvm_dpi.o 
 
 DPI_WRAPPER_OBJS = 
 DPI_STUB_OBJS = 
