@@ -22,9 +22,12 @@ import hbus_pkg::*;
 initial begin
     yapp_vif_config::set(null, "*tb.env.agnt.*", "vif", hw_top.in0 );
 
-channel_vif_config::set(null,"*","vif",hw_top.chif0);
-channel_vif_config::set(null,"*","vif",hw_top.chif1);
-channel_vif_config::set(null,"*","vif",hw_top.chif2);
+channel_vif_config::set(null,"*chan0*","vif",hw_top.chif0);
+channel_vif_config::set(null,"*chan1*","vif",hw_top.chif1);
+channel_vif_config::set(null,"*chan2*","vif",hw_top.chif2);
+// channel_vif_config::set(null,"*tb.chan0*","vif",hw_top.chif0);
+// channel_vif_config::set(null,"*tb.chan1*","vif",hw_top.chif1);
+// channel_vif_config::set(null,"*tb.chan2*","vif",hw_top.chif2);
 
 hbus_vif_config::set(null,"*","vif",hw_top.hbus);
 

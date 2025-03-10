@@ -210,12 +210,12 @@ virtual task body();
         for (int j = 0; j < 4; j++) begin
             `uvm_create(req);
 
-            if (!req.randomize() with { req.length ==j ; req.parity_type dist {GOOD_PARITY := 80, BAD_PARITY := 20}; }) begin
+            if (!req.randomize() with { req.length ==i ; req.parity_type dist {GOOD_PARITY := 80, BAD_PARITY := 20}; }) begin
                 `uvm_error(get_type_name(), "Randomization failed for req!");
             end
 
-            req.addr = i; 
-           // req.length = i;
+            req.addr = j; 
+          //  req.length = i;
             req.set_parity(); 
             `uvm_send(req); 
         end

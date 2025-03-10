@@ -69,7 +69,8 @@ function  void build_phase(uvm_phase phase);
       super.build_phase(phase);
       set_type_override();
        uvm_config_wrapper::set(this, "tb.env.agnt.seqr.run_phase","default_sequence",yapp_012_seq::get_type());   
-       uvm_config_wrapper::set(this, "tb.chan?.rx_agent.sequencer.run_phase","default_sequence",channel_rx_resp_seq::get_type());   
+       uvm_config_wrapper::set(this, "tb.chan*.sequencer.run_phase","default_sequence",channel_rx_resp_seq::get_type());   
+    //    uvm_config_wrapper::set(this, "tb.chan?.rx_agent.sequencer.run_phase","default_sequence",channel_rx_resp_seq::get_type());   
        uvm_config_wrapper::set(this, "tb.clk_rst_env.agent.sequencer.run_phase","default_sequence",clk10_rst5_seq::get_type());   
 
 endfunction //automatic
