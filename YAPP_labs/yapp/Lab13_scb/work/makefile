@@ -3,7 +3,10 @@ VCS = vcs -full64 -ntb_opts uvm -sverilog -debug_all -kdb -f ../task1_integ/tb/f
 SIMV = ./simv 
 
 # Default test (can be overridden)
-TEST ?= base_test     
+
+#TEST ?= base_test     
+TEST ?= mcseq_test
+
 VER ?= UVM_FULL  
 
 compile:
@@ -12,7 +15,7 @@ compile:
 
 run: 
 	@echo "🚀 Running simulation with TEST=$(TEST)"
-	$(SIMV) +UVM_TESTNAME=$(TEST)  +UVM_VERBOSITY=$(VER)  +ntb_random_seed_automatic -l log.log
+	$(SIMV) +UVM_TESTNAME=$(TEST)  +UVM_VERBOSITY=$(VER)  +ntb_random_seed_automatic -l report.log
 
 
 
