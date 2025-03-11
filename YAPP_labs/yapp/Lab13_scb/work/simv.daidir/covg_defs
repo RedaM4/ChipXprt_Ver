@@ -1,0 +1,176 @@
+global coverage_group 0 0 hbus_pkg::hbus_monitor::cover_transaction __coverage_hbus_monitor.cover_transaction unused_hbus_monitor_cover_transaction_loop_label hbus_pkg 0 1 0 0 0  ( 0 
+)
+ 1 2
+ 0 85 /home/Reda_Alhashem/chip_ver/YAPP_labs/yapp/Lab13_scb/work/../hbus/sv/hbus_monitor.sv
+ 94 /home/Reda_Alhashem/chip_ver/YAPP_labs/yapp/Lab13_scb/work/../channel/sv/channel_rx_monitor.sv
+ 42 0 0 0 1 0 0 0 0  1
+0
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 58 hbus_monitor::hbus_pkg_hbus_monitor_cover_transaction_fn_5
+ 0
+0
+0
+0
+64
+0
+ 0
+
+2
+0
+1
+0
+ 7 address 44 0 0 0 0 0 0 56 hbus_monitor::hbus_pkg_hbus_monitor_cover_transaction_fn 56 hbus_monitor::hbus_pkg_hbus_monitor_cover_transaction_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 16 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 4 1 1 0 0 1 1 11 max_pkt_reg 45 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 hbus_monitor::hbus_pkg_hbus_monitor_cover_transaction_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 10 enable_reg 46 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 hbus_monitor::hbus_pkg_hbus_monitor_cover_transaction_fn_1 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 10 other_regs 47 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 hbus_monitor::hbus_pkg_hbus_monitor_cover_transaction_fn_2 0 58 hbus_monitor::hbus_pkg_hbus_monitor_cover_transaction_fn_3 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 6 ignore 49 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 8 0 0 0 0 0 0 0 0 0
+
+ 9 direction 50 0 0 0 0 0 0 58 hbus_monitor::hbus_pkg_hbus_monitor_cover_transaction_fn_4 58 hbus_monitor::hbus_pkg_hbus_monitor_cover_transaction_fn_4 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 7 1 1 30 hbus_pkg::hbus_read_write_enum 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 17 addressXdirection 0 51 0 0 -1 0 0 0 0 2 0 1 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group
+global coverage_group 0 0 channel_pkg::channel_rx_monitor::cover_packet __coverage_channel_rx_monitor.cover_packet unused_channel_rx_monitor_cover_packet_loop_label channel_pkg 0 1 0 0 0  ( 0 
+)
+ 0 49 1 0 0 1 0 0 0 0  1
+0
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_8
+ 0
+0
+0
+0
+64
+0
+ 0
+
+2
+0
+0
+0
+ 13 packet_length 51 1 0 0 0 0 0 66 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn 66 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 6 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 6 1 1 0 0 1 1 3 ONE 52 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 5 SMALL 53 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_1 0 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_2 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 6 MEDIUM 54 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_3 0 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_4 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 5 LARGE 55 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_4 0 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_5 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 3 MAX 56 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_6 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 7 illegal 57 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 8 0 0 0 0 0 0 0 0 0
+
+ 18 packet_parity_type 59 1 0 0 0 0 0 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_7 68 channel_rx_monitor::channel_pkg_channel_rx_monitor_cover_packet_fn_7 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 7 1 1 21 channel_pkg::parity_e 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group

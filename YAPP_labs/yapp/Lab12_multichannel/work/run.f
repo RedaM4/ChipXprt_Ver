@@ -1,6 +1,7 @@
 +UVM_VERBOSITY=UVM_FULL 
 +ntb_random_seed_automatic
 +UVM_TESTNAME=mcseq_test
+-l log.log
 // +UVM_TESTNAME=test_uvc_integration
 // +UVM_TESTNAME=simple_test
 // +UVM_TESTNAME=set_config_test

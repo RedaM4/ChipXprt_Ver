@@ -5,6 +5,7 @@ class scoreboard extends uvm_test;
   uvm_analysis_imp #(sequence_item,scoreboard) scoreboard_port;
     sequence_item transactions[$];
    sequence_item actual;
+   
    int expected[8] ; 
    int temp ; 
  //--------------------------------------------------------

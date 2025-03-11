@@ -1,0 +1,7 @@
+Command exited with non-zero status 255
+{"vcs1":{"timestamp_begin":1741695683.369975240, "rt":3.03, "ut":3.24, "st":0.35}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1741695682.795181957}
+{"VCS_COMP_START_TIME": 1741695682.795181957}
+{"VCS_COMP_END_TIME": 1741695686.484194576}
+{"VCS_USER_OPTIONS": "-full64 -ntb_opts uvm -sverilog -debug_all -kdb -f ../task1_integ/tb/filelist.f -timescale=1ns/1ns"}
+{"vcs1": {"peak_mem": 475456}}
