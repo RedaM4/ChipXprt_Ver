@@ -1,0 +1,6 @@
+Command exited with non-zero status 1
+{"vcs1":{"timestamp_begin":1741516409.527827573, "rt":0.09, "ut":0.01, "st":0.05}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1741516408.927753911}
+{"VCS_COMP_START_TIME": 1741516408.927753911}
+{"VCS_COMP_END_TIME": 1741516409.686293034}
+{"VCS_USER_OPTIONS": "-full64 -ntb_opts -uvm -sverilog -debug_all -kdb -f ../task1_integ/filelist.f -timescale=1ns/1ns"}

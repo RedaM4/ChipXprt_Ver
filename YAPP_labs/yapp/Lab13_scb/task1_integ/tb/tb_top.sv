@@ -38,6 +38,11 @@ run_test("base_test") ;
 
 end
 
+initial begin
+    $dumpfile("test.vcd");
+$dumpvars();
+end
+
 
 
 // experiment with the copy, clone and compare UVM method
